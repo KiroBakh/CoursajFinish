@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  box-shadow: 2px 4px 10px rgb(202, 189, 9);
+}
+.fade-in {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: 0;
+  color: rgba(219, 209, 61, 0.949);
+  text-shadow: 0 0 15px rgba(198, 199, 144, 0.467);
+  animation: fadeIn 4s forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  opacity: 0; 
+  animation: fade-in 1s forwards; 
+  box-shadow: 2px 4px 10px rgb(202, 189, 9);
+}
+@keyframes fade-in {
+  from { opacity: 0; } 
+  to { opacity: 1; } 
+}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 2px 4px 10px rgb(202, 189, 9);
+}
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1035px;
+  height: 80px;
+  background-color: rgb(4, 25, 33);
+}
+.top-menu {
+  min-width: 1000px;
+  height: 80px;
+}
+.top-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.top-menu ul li {
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+.top-menu ul li:last-child {
+  margin-right: 0;
+}
+.top-menu ul li a {
+  display: block;
+  width: 171px;
+  text-decoration: none;
+  font-family: "Exo2-Medium", sans-serif;
+  font-size: 20px;
+  color: white;
+  height: 55px;
+  padding-top: 25px;
+  cursor: pointer;
+}
+.top-menu ul li a:hover {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  background: #00ade4;
+  color: rgb(4, 25, 33);
+  font-size: 25px;
+}
+
+.btn,
+a {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+}
+
+.btn,
+a:hover {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  opacity: 0.4;
+  transform: scale(0.9);
+}

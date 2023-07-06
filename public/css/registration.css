@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1035px;
+  height: 80px;
+  background-color: rgb(4, 25, 33);
+}
+.top-menu {
+  min-width: 1000px;
+  height: 80px;
+}
+.top-menu ul li {
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+.top-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.top-menu ul li a {
+  display: block;
+  width: 171px;
+  text-decoration: none;
+  font-family: "Exo2-Medium", sans-serif;
+  font-size: 20px;
+  color: white;
+  height: 55px;
+  padding-top: 25px;
+  cursor: pointer;
+}
+.top-menu ul li:last-child {
+  margin-right: 0;
+}
+.top-menu ul li a:hover {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  background: #00ade4;
+  color: rgb(4, 25, 33);
+  font-size: 25px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.fade-in {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: 0;
+  color: #cae000da;
+  text-shadow: 0 0 15px rgba(199, 198, 144, 0.467);
+  animation: fadeIn 2s forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  max-width: 500px;
+  padding: 1rem;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(187, 144, 199, 0.467);
+  text-align: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #9ba300;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fdf901;
+  opacity: 0.4;
+  transform: scale(0.9);
+}
+
+.regis,
+a {
+  color: rgb(160, 206, 245);
+  text-decoration: none;
+  text-decoration: underline;
+  padding-top: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.regis a:hover {
+  color: chartreuse;
+  opacity: 0.4;
+  transform: scale(0.9);
+}
+
+.message {
+  color: red;
+  padding-bottom: 10px;
+}

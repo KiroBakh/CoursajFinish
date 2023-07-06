@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: url('/public/icons/header.jpg') no-repeat center center fixed;
+  background-size: cover; 
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1035px;
+  height: 80px;
+  background-color: rgb(40, 2, 55);
+}
+
+.top-menu {
+  min-width: 1000px;
+  height: 80px;
+}
+
+.top-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.top-menu ul li {
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+
+.top-menu ul li:last-child {
+  margin-right: 0;
+}
+
+.top-menu ul li a {
+  display: block;
+  width: 171px;
+  text-decoration: none;
+  font-family: "Exo2-Medium", sans-serif;
+  font-size: 20px;
+  color: white;
+  height: 55px;
+  padding-top: 25px;
+  cursor: pointer;
+}
+
+.top-menu ul li a:hover {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  background: #7000a8;
+  color: rgb(4, 25, 33);
+  font-size: 25px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.fade-in {
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgb(255, 0, 0);
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: 0;
+  color: #e00400f6;
+  animation: fadeIn 2s forwards;
+}
+
+.fade-in2 {
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgb(255, 140, 0);
+  text-align: center;
+  opacity: 0;
+  color: #e09900f6;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  max-width: 500px;
+  padding: 1rem;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 1012 px rgb(160, 99, 207);
+  text-align: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #a30000;
+  text-shadow: 2px 2px 4px rgba(255, 1, 1, 0.97);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fd0101;
+  opacity: 0.4;
+  transform: scale(0.9);
+}
+
+.changePassword{
+  background-color: greenyellow;
+  margin-left: 50px;
+}
+
+.message {
+  color: red;
+  padding-bottom: 10px;
+}

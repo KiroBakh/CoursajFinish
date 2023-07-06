@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/public/icons/login.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вхід</title>
+    <link rel="stylesheet" href="/public/css/login.css" />
+  </head>
+  <body>
+    <header>
+      <div class="top-menu">
+        <ul>
+          <li><a href="/">Додому</a></li>
+          <li><a href="/results">Результати</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1 class="fade-in">Вхід</h1>
+
+      <% if (message) { %>
+      <p class="message"><%= message %></p>
+      <% } %>
+
+      <form method="post" action="/auth/login">
+        <div>
+          <label for="username">Імʼя:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+
+        <div>
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <% if (attempts >= 3) { %>
+          <div>
+            <p>Ви ввели неправильний пароль більше 3-х разів.</p>
+            <p>Бажаєте скинути пароль на електронну пошту?</p>
+            <button type="submit" name="resetPassword">Так</button>
+          </div>
+        <% } else { %>
+          <div>
+            <button class="btn" type="submit">Увійти</button>
+          </div>
+        <% } %>        
+
+        <p class="regis">
+          Ще не зарєєстровані?<a href="/auth/register"> Зареєструватись</a>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

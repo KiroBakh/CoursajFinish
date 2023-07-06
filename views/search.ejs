@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="/public/icons/search.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/public/css/search.css" />
+    <meta charset="utf-8" />
+    <title>Пошук Результатів</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-menu">
+        <ul>
+          <li><a href="/">Додому</a></li>
+          <li><a href="/results">Результати</a></li>
+          <% if (isAdmin) {%>
+          <li><a href="/results/create">Додати</a></li>
+          <% } %>
+          <li><a href="/auth/register">Реєстрація</a></li>
+          <% if (isLoggedIn) { %>
+          <li><a href="/profile">Профіль користувача</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="form-container">
+        <h1 class="fade-in">Пошук Результатів</h1>
+        <form method="get" action="/results/search">
+          <div class="form-group">
+            <label for="sername">Прізвище користувача</label>
+            <input
+              type="text"
+              id="sername"
+              name="sername"
+              placeholder="Введите имя пользователя"
+            />
+          </div>
+          <button class="btn" type="submit">Знайти</button>
+        </form>
+      </div>
+    </div>
+    <div class="containerTable">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th style="color: red">ID</th>
+            <th style="color: rgb(255, 0, 162)">Прізвище</th>
+            <th style="color: rgb(8, 0, 255)">Ім'я</th>
+            <th style="color: rgb(0, 217, 255)">Дата</th>
+            <th style="color: rgb(255, 247, 0)">Рахунок/Бали</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (result.length > 0) { %> <% for (const res of result) { %>
+          <tr>
+            <td><%= res.id %></td>
+            <th><%= res.sername %></th>
+            <td><%= res.name %></td>
+            <td><%= new Date(res.date).toLocaleDateString('ru-RU', {day: 'numeric', month: 'numeric', year: 'numeric'}) %></td>
+            <td><%= res.score %></td>
+          </tr>
+          <% } %> <% } else { %>
+          <tr>
+            <td colspan="4">
+              <p class="error"><%= error %></p>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

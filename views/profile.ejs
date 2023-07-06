@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Профіль Користувача</title>
+    <link rel="icon" href="/public/icons/profile.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/profile.css" />
+  </head>
+  <body>
+    <header>
+      <div class="top-menu">
+        <ul>
+          <li><a href="/">Додому</a></li>
+          <li><a href="/results">Результаты</a></li>
+          <% if (isAdmin) { %>
+            <li><a href="/results/create">Додати</a></li>
+          <% } %>
+          <li><a href="/results/search">Знайти Результат</a></li>
+          <li><a href="/auth/register">Реэстрація</a></li>
+          <li class="changePassword"><a  href="/profile/changePassword">Змінити пароль</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="form">
+        <div>
+          <h1 class="fade-in">Профіль Користувача</h1>
+        </div>
+        <div>
+          <h2 class="fade-in2">Ласкаво просимо, <%= user.username %>!</h2>
+        </div>
+        <div>
+          <button class="btn"><a href="/logout">Вихід</a></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

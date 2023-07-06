@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="/public/icons/sort.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/sort.css" />
+    <title>Відсортовані Результати</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-menu">
+        <ul>
+          <li><a href="/">Додому</a></li>
+          <% if (isAdmin) {%>
+          <li><a href="/results/create">Додати</a></li>
+          <% } %>
+          <li><a href="/auth/register">Реєстрація</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1 class="fade-in">Сортування</h1>
+      <table>
+        <thead>
+          <tr>
+            <th style="color: red">ID</th>
+            <th style="color: rgb(8, 0, 255)">
+              <a
+                href="?sortBy=sername&sortOrder=<%= sortOrder === 'asc' ? 'desc' : 'asc' %>"
+                >|Прізвище|</a>
+            </th>
+            <th style="color: rgb(8, 0, 255)">
+              <a
+                href="?sortBy=name&sortOrder=<%= sortOrder === 'asc' ? 'desc' : 'asc' %>"
+                >|Ім'я|</a>
+            </th>
+            <th style="color: rgb(0, 217, 255)">
+              <a
+                href="?sortBy=date&sortOrder=<%= sortOrder === 'asc' ? 'desc' : 'asc' %>"
+                >|Дата|</a
+              >
+            </th>
+            <th style="color: rgb(255, 247, 0)">
+              <a
+                href="?sortBy=score&sortOrder=<%= sortOrder === 'asc' ? 'desc' : 'asc' %>"
+                >|Рахунок/Бали|</a
+              >
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.sername %></td>
+            <td><%= user.name %></td>
+            <td><%= user.date %></td>
+            <td><%= user.score %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

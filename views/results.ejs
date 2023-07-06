@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/public/icons/shoot.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/public/css/results.css" />
+    <title>Результати</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-menu">
+        <ul>
+          <li><a href="/">Додому</a></li>
+          <% if (isAdmin) {%>
+          <li><a href="/results/create">Додати</a></li>
+          <% } %>
+          <li><a href="/results/search">Знайти Результат</a></li>
+          <li><a href="/auth/register">Реєстрація</a></li>
+          <% if (isLoggedIn) { %>
+          <li><a href="/profile">Профіль користувача</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </header>
+    <div class="container">
+      <% if (!selectedUnit) { %>
+        <h1 class="select-unit-title">Виберіть Підрозділ</h1>
+        <ul class="unit-list">
+          <% units.forEach(function(unit) { %>
+            <li class="unit-item">
+              <a class="unit-link" href="/results/unit/<%= unit.id %>"><%= unit.name %></a>
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <h1 class="fade-in">Результати <%= selectedUnit %> н/г</h1>
+        <table>
+          <thead>
+            <tr>
+              <th style="color: red">ID</th>
+              <th style="color: rgb(255, 0, 221)">Прізвище</th>
+              <th style="color: rgb(8, 0, 255)">Ім'я</th>
+              <th style="color: rgb(0, 217, 255)">Дата</th>
+              <th style="color: rgb(255, 247, 0)">Рахунок/Бали</th>
+              <% if (isAdmin) {%>
+              <th colspan="2" style="text-align: center">Дії</th>
+              <% } %>
+            </tr>
+          </thead>
+          <tbody>
+            <% results.forEach(function(result) { %>
+              <tr>
+                <td><%= result.id %></td>
+                <td><%= result.sername %></td>
+                <td><%= result.name %></td>
+                <td><%= new Date(result.date).toLocaleDateString('ru-RU', {day: 'numeric', month: 'numeric', year: 'numeric'}) %></td>
+                <td><%= result.score %></td>
+                <% if (isAdmin) {%>
+                <td>
+                  <form action="/results/delete/<%= result.id %>" method="post">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button class="dlt_btn" id="">Видалити</button>
+                  </form>
+                </td>
+                <td>
+                  <input type="text" hidden value="<%= result.id %>" name="id" />
+                  <button class="upd_btn" id="">
+                    <a href="/results/update/<%= result.id %>">Оновити</a>
+                  </button>
+                </td>
+                <% } %>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+
+        <div class="pagination">
+          <% if (currentPage > 1) { %>
+          <a href="?page=<%= currentPage - 1 %>">«</a>
+          <% } %> <% for (let i = 1; i <= totalPages; i++) { %> <% if (currentPage
+          === i) { %>
+          <a href="?page=<%= i %>" class="active"><%= i %></a>
+          <% } else { %>
+          <a href="?page=<%= i %>"><%= i %></a>
+          <% } %> <% } %> <% if (currentPage < totalPages) { %>
+          <a href="?page=<%= currentPage + 1 %>">»</a>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>

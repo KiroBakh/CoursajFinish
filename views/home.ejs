@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/public/icons/aim.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/public/css/home.css" />
+    <title>Домашняя страница</title>
+  </head>
+  <body>
+    <header>
+      <nav class="top-menu">
+        <ul>
+          <li><a href="/results">Результати</a></li>
+          <% if (isAdmin) { %>
+          <li><a href="/results/create">Додати</a></li>
+          <li><a href="/auth/changeRole">Змінити роль користувача</a></li>
+          <% } %>
+          <li><a href="/results/search">Знайти Результат</a></li>
+          <li><a href="/auth/register">Реєстрація</a></li>
+          <% if (isLoggedIn) { %>
+          <li><a href="/profile">Профіль користувача</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="fade-in">
+        Діяльності обліку результатів виконання вправ стрільб в підрозділі(27)
+      </h1>
+    </main>
+  </body>
+</html>

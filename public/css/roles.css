@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding-left: 180px;
+  min-width: 1035px;
+  height: 80px;
+  background-color: rgb(4, 25, 33);
+  margin-bottom: 30px;
+}
+.top-menu {
+  min-width: 685px;
+  height: 80px;
+}
+.top-menu ul li {
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+.top-menu ul li a {
+  display: block;
+  width: 171px;
+  text-decoration: none;
+  font-family: "Exo2-Medium", sans-serif;
+  font-size: 20px;
+  color: white;
+  height: 55px;
+  padding-top: 25px;
+  cursor: pointer;
+}
+.top-menu ul li a:hover {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  background: #00ade4;
+  color: rgb(4, 25, 33);
+  font-size: 25px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.fade-in {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: 0;
+  color: rgb(255, 0, 195);
+  animation: fadeIn 4s forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+table {
+  border-collapse: separate;
+  width: 90%;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 15px rgba(187, 144, 199, 0.467);
+  margin: 0 auto;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.932), -2px -2px 7px rgba(132, 10, 153, 0.898);
+
+}
+
+th {
+  background-color: #f2f2f2;
+  color: aqua;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.role {
+  padding: 6px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.admin {
+  color: white;
+  background-color: #ff4d4d;
+}
+
+.user {
+  color: black;
+  background-color: #b3e0ff;
+}
+
+button.chn {
+  display: flex;
+  float: right;
+  background: linear-gradient(to bottom, #9370db, #663399);
+  color: white;
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button.chn:hover {
+  background: linear-gradient(to bottom, #663399, #9370db);
+}
+
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.35rem;
+  border: 2px solid #7d03a6;
+  background-color: #fff;
+  color: #555;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  transition: border-color 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+select:focus {
+  outline: none;
+  border-color: #ee00ff;
+  box-shadow: 1px 2px 0.5rem rgba(255, 0, 255, 0.4);
+}
+
+select option {
+  background-color: #d191ed;
+  color: #333333;
+}

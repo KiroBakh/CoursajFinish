@@ -1,0 +1,59 @@
+<!-- users.ejs -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ролі Користувачів</title>
+    <link rel="icon" href="/public/icons/role.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/roles.css">
+  </head>
+  <body>
+    <header>
+      <nav class="top-menu">
+        <ul>
+          <li><a href="/">Додому</a></li>
+          <li><a href="/results">Результати</a></li>
+          <li><a href="/results/create">Додати</a></li>
+          <li><a href="/results/search">Знайти Результат</a></li>
+          <li><a href="/auth/register">Реєстрація</a></li>
+          <li><a href="/profile">Профіль користувача</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 class="fade-in">Ролі Користувачів</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Імʼя</th>
+          <th>Роль</th>
+          <th>Дія</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(user) { %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.username %></td>
+          <td>
+            <% if (user.role === 'admin') { %>
+            <span class="role admin">Admin</span>
+            <% } else if(user.role === 'user'){ %>
+            <span class="role user">User</span>
+            <% } %>
+          </td>
+          <td>
+            <form method="post" action="/auth/changeRole/<%= user.id %>">
+              <select name="role">
+                <option value="user" <% if (user.role === 'user') { %> selected <% } %>>Користувач</option>
+                <option value="admin" <% if (user.role === 'admin') { %> selected <% } %>>Адмін</option>
+              </select>
+              <button class="chn" type="submit">Змінити Роль</button>
+            </form>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

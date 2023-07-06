@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/public//icons/add.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/add.css" />
+    <title>Створити новий результат вправ стрільб</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-menu">
+        <ul>
+          <li><a href="/">Додому</a></li>
+          <li><a href="/results">Результати</a></li>
+          <li><a href="/auth/register">Реєстрація</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1 class="fade-in">Створити новий результат вправ стрільб</h1>
+
+      <form action="/results/create" method="POST">
+        <div>
+          <label for="sername">Прізвище:</label>
+          <input type="text" id="sername" name="sername" required />
+        </div>
+        <div>
+          <label for="name">Ім'я:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <label for="date">Дата:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div>
+          <label for="score">Рахунок:</label>
+          <input type="number" id="score" name="score" required />
+        </div>
+        <div>
+          <label for="unit">Підрозділ:</label>
+          <select id="unit" name="unit">
+            <% units.forEach(function(unit) { %>
+              <option value="<%= unit.id %>"><%= unit.name %></option>
+            <% }); %>
+          </select>
+        </div>
+        <button class="btn" type="submit">Додати</button>
+      </form>
+    </div>
+  </body>
+</html>
